@@ -2,6 +2,7 @@
   --main-color-blue: #2196f3;
   --main-color-grey: #757575;
   --main-color-white: #ffffff;
+  --main-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -103,6 +104,7 @@ header .container {
   color: inherit;
   padding: 32px 0;
   display: block;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-item:hover,
@@ -127,6 +129,7 @@ header .container {
 .header-link-icon {
   margin-right: 10px;
   fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link-icon:hover,
@@ -134,18 +137,7 @@ header .container {
   fill: var(--main-color-blue);
 }
 
-.header-mail {
-  display: flex;
-  align-items: center;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  color: var(--main-color-grey);
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
+.header-mail,
 .header-tel {
   display: flex;
   align-items: center;
@@ -156,6 +148,7 @@ header .container {
   color: var(--main-color-grey);
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-mail:hover,
@@ -199,6 +192,8 @@ header .container {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   margin: 0 auto;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -312,6 +307,8 @@ header .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-name-link:hover,
@@ -361,12 +358,14 @@ header .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-icon {
   width: 106px;
   height: 60px;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover .customers-icon,
@@ -421,6 +420,7 @@ header .container {
   line-height: 1.17;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-addres-list {
@@ -458,6 +458,7 @@ header .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-icon {
@@ -483,6 +484,16 @@ header .container {
   background-color: #f5f4fa;
   border-radius: 4px;
   letter-spacing: 0.03em;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-btn:hover,
+.portfolio-list-btn:focus {
+  background-color: var(--main-color-blue);
+  color: var(--main-color-white);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-list {
@@ -497,14 +508,6 @@ header .container {
   margin: auto;
 }
 
-.portfolio-list-btn:hover,
-.portfolio-list-btn:focus {
-  background-color: var(--main-color-blue);
-  color: var(--main-color-white);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-}
-
 .portfolio-list-pic {
   display: flex;
   flex-wrap: wrap;
@@ -516,14 +519,42 @@ header .container {
   background: #ffffff;
 }
 
-.portfolio-link-title {
-  display: block;
+.portfolio-list-block:hover .portfolio-link-text,
+.portfolio-list-block:focus .portfolio-link-text {
+  transform: translateY(0%);
 }
 
-.portfolio-link-title:hover,
-.portfolio-link-title:focus {
+.portfolio-link-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-link-title {
+  display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-block:hover .portfolio-link-title,
+.portfolio-list-block:focus .portfolio-link-title {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-link-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--main-color-white);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 24px 63px;
+  background: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 2250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .container-title {
