@@ -145,7 +145,7 @@ header .container {
 .header-link-icon {
   margin-right: 10px;
   fill: currentColor;
-  }
+}
 
 .header-link-icon:hover,
 .header-link-icon:focus {
@@ -178,6 +178,7 @@ header .container {
 }
 
 /* -----------HERO------------- */
+
 .hero {
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/Img-header.jpg);
